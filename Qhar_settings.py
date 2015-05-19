@@ -64,7 +64,7 @@ class Settings(object):
         """This method tries to load settings from the default save location
         in .config"""
         settings = QSettings()
-        if settings.value("FirstRun").toPyObject() is not None:  
+        if settings.value("FirstRun") is not None:  
             self.restoreGeometry(settings.value("MainWindow/Geometry"))
             self.restoreState(settings.value("MainWindow/State"))
             self.window_size = settings.value("MainWindow/Size", QSize(600, 500))
